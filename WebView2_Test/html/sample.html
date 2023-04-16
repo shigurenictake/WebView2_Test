@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<style>
+    .div-1 {
+        background-color: #FBD603;
+    }
+
+    .div-2 {
+        background-color: #ABBAEA;
+    }
+</style>
+
+<html lang="ja">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <script language="javascript" type="text/javascript">
+
+        //C#からJavaScriptを呼び出す
+        function jsFunc1(str1) {
+            //alert("C# called>" + str1);
+
+            //タグを生成
+            const tag = document.createElement("div");
+            tag.innerText = str1;
+
+            //未完了のリストに追加
+            document.getElementById("CsToJs").appendChild(tag);
+
+            return "success"
+        }
+
+        //JavaScriptからC#を呼び出す
+        function ButtonClick_JsToCs() {
+            //テキストボックスから値取得
+            const sendtext = document.getElementById('sendtext');
+
+            //C#の関数の実行
+            //chrome.webview.hostObjects.CsClass.JsToCsMethod("Js send text");
+            chrome.webview.hostObjects.CsClass.JsToCsMethod(sendtext.value);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="CsToJs" class="div-1">
+        <p><b>◆C#から受け取った文字列＞</b></p>
+    </div>
+
+
+    <div id="CsToJs" class="div-2">
+        <p><b>◆JavaScriptからC#へ送信＞</b></p>
+        <input type="text" id="sendtext"></p>
+        <input type="button" value='▼送信' onclick="ButtonClick_JsToCs();" />
+    </div>
+
+
+
+</body>
+</html>
