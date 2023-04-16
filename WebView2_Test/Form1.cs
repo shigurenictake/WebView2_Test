@@ -60,7 +60,8 @@ namespace WebView2_Test
 
             //JavaScriptの関数を実行
             string str1 = await webView.ExecuteScriptAsync("jsFunc1(\"" + sendStr + "\")");
-            this.richTextBox_JsToCs.AppendText("Jsからの戻り値＞" + str1 + "\n");
+            //Jsからの戻り値を表示
+            this.richTextBox_CsToJsReturn.AppendText(str1 + "\n");
         }
 
     }

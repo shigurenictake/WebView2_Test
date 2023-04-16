@@ -36,6 +36,8 @@
             this.button_CsToJs = new System.Windows.Forms.Button();
             this.label_UrlBar = new System.Windows.Forms.Label();
             this.textBox_CsToJs = new System.Windows.Forms.TextBox();
+            this.label_CsToJsReturn = new System.Windows.Forms.Label();
+            this.richTextBox_CsToJsReturn = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +79,7 @@
             // 
             this.label_JsToCs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_JsToCs.AutoSize = true;
-            this.label_JsToCs.Location = new System.Drawing.Point(659, 139);
+            this.label_JsToCs.Location = new System.Drawing.Point(661, 230);
             this.label_JsToCs.Name = "label_JsToCs";
             this.label_JsToCs.Size = new System.Drawing.Size(165, 12);
             this.label_JsToCs.TabIndex = 4;
@@ -87,9 +89,9 @@
             // 
             this.richTextBox_JsToCs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_JsToCs.Location = new System.Drawing.Point(662, 154);
+            this.richTextBox_JsToCs.Location = new System.Drawing.Point(662, 245);
             this.richTextBox_JsToCs.Name = "richTextBox_JsToCs";
-            this.richTextBox_JsToCs.Size = new System.Drawing.Size(345, 284);
+            this.richTextBox_JsToCs.Size = new System.Drawing.Size(345, 193);
             this.richTextBox_JsToCs.TabIndex = 5;
             this.richTextBox_JsToCs.Text = "";
             // 
@@ -121,11 +123,32 @@
             this.textBox_CsToJs.Size = new System.Drawing.Size(346, 19);
             this.textBox_CsToJs.TabIndex = 8;
             // 
+            // label_CsToJsReturn
+            // 
+            this.label_CsToJsReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_CsToJsReturn.AutoSize = true;
+            this.label_CsToJsReturn.Location = new System.Drawing.Point(663, 107);
+            this.label_CsToJsReturn.Name = "label_CsToJsReturn";
+            this.label_CsToJsReturn.Size = new System.Drawing.Size(90, 12);
+            this.label_CsToJsReturn.TabIndex = 9;
+            this.label_CsToJsReturn.Text = "Jsからの戻り値＞";
+            // 
+            // richTextBox_CsToJsReturn
+            // 
+            this.richTextBox_CsToJsReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_CsToJsReturn.Location = new System.Drawing.Point(663, 123);
+            this.richTextBox_CsToJsReturn.Name = "richTextBox_CsToJsReturn";
+            this.richTextBox_CsToJsReturn.Size = new System.Drawing.Size(344, 87);
+            this.richTextBox_CsToJsReturn.TabIndex = 10;
+            this.richTextBox_CsToJsReturn.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 450);
+            this.Controls.Add(this.richTextBox_CsToJsReturn);
+            this.Controls.Add(this.label_CsToJsReturn);
             this.Controls.Add(this.textBox_CsToJs);
             this.Controls.Add(this.label_UrlBar);
             this.Controls.Add(this.button_CsToJs);
@@ -152,6 +175,8 @@
         private System.Windows.Forms.Label label_UrlBar;
         public System.Windows.Forms.RichTextBox richTextBox_JsToCs;
         private System.Windows.Forms.TextBox textBox_CsToJs;
+        private System.Windows.Forms.Label label_CsToJsReturn;
+        private System.Windows.Forms.RichTextBox richTextBox_CsToJsReturn;
     }
 }
 
