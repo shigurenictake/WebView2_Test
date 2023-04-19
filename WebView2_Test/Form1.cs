@@ -1,7 +1,16 @@
-﻿using Microsoft.Web.WebView2.Core;
+﻿using Microsoft.Web.WebView2.Core;//WebView2
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SharpMap;//SharpMap
+using SharpMap.Layers;//SharpMap
+using SharpMap.Data.Providers;//SharpMap
+using GeoAPI.Geometries;//SharpMap
+using System.Drawing;//SharpMap
+using SharpMap.Forms;//SharpMap
+using SharpMap.Forms.ToolBar;//SharpMap
+using NetTopologySuite.Geometries;
+using System.Collections.Generic;
 
 namespace WebView2_Test
 {
@@ -10,6 +19,7 @@ namespace WebView2_Test
         //JavaScriptで呼ぶ関数を保持するオブジェクト
         private JsToCs CsClass = new JsToCs();
 
+        //コンストラクタ
         public Form1()
         {
             //JsToCsクラスでForm1のフォーム取得参照用
@@ -23,6 +33,60 @@ namespace WebView2_Test
 
             //WebView2のロード完了時のイベント
             webView.NavigationCompleted += WebView_NavigationCompleted;
+
+            //======================
+            //SharpMap
+            //参考
+            //http://blog.livedoor.jp/kuro_program/archives/7235669.html
+
+            mapBox1.Map = new Map(new Size(mapBox1.Width, mapBox1.Height));
+            mapBox1.Map.BackColor = Color.Blue;
+
+            //レイヤーの作成
+            VectorLayer baseLayer = new VectorLayer("Countries");
+            //baseLayer.DataSource = new ShapeFile(@"..\..\ShapeFiles\polbnda_jpn\polbnda_jpn.shp");
+            baseLayer.DataSource = new ShapeFile(@"..\..\ShapeFiles\ne_10m_coastline\ne_10m_coastline.shp",true);
+
+            baseLayer.Style.Fill = Brushes.LimeGreen;
+            baseLayer.Style.Outline = Pens.Black;
+            baseLayer.Style.EnableOutline = true;
+
+            //マップにレイヤーを追加
+            mapBox1.Map.Layers.Add(baseLayer);
+
+
+            //線と点を書く start -------
+            VectorLayer orgLayer = new VectorLayer("子午線");
+            GeometryFactory gf = new GeometryFactory();
+            List<IGeometry> eomColl = new List<IGeometry>();
+
+            //線を書く
+            Coordinate[] linePos = { new Coordinate(135, 30), new Coordinate(135, 37) };
+            eomColl.Add(gf.CreateLineString(linePos));
+
+            //点を書く
+            eomColl.Add(gf.CreatePoint(new Coordinate(135, 35)));
+
+            GeometryProvider vpro = new GeometryProvider(eomColl);
+            orgLayer.DataSource = vpro;
+
+            mapBox1.Map.Layers.Add(orgLayer);
+            //線と点を書く end -------
+
+
+            //Zoom制限
+            mapBox1.Map.MinimumZoom = 0.1;
+            mapBox1.Map.MaximumZoom = 360.0;
+
+            mapBox1.Map.ZoomToExtents();
+            mapBox1.Refresh();
+            //======================
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         //WebView2のロード完了時
