@@ -1,4 +1,4 @@
-﻿using Microsoft.Web.WebView2.Core;
+﻿using Microsoft.Web.WebView2.Core;//WebView2
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -10,6 +10,7 @@ namespace WebView2_Test
         //JavaScriptで呼ぶ関数を保持するオブジェクト
         private JsToCs CsClass = new JsToCs();
 
+        //コンストラクタ
         public Form1()
         {
             //JsToCsクラスでForm1のフォーム取得参照用
