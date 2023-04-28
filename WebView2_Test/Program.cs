@@ -16,7 +16,9 @@ namespace WebView2_Test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            string url = System.IO.Path.GetFullPath(@"..\\..\\html\\sample.html");
+            Application.Run(new Form1(url));
         }
     }
 }
