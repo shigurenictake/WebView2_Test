@@ -46,6 +46,10 @@
     <script>
         function closeWindow() {
             window.close();
+
+            //C#の関数の実行 - ウィンドウを閉じる
+            chrome.webview.hostObjects.jsToCs.WindowClose();
+            
         }
     </script>
 

@@ -66,6 +66,13 @@ namespace WebView2_Test
             this.richTextBox_CsToJsReturn.AppendText(str1 + "\n");
         }
 
+        //イベント - 閉じるボタン
+        public void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
     }
 
 }
