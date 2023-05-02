@@ -1,4 +1,6 @@
-﻿namespace WebView2_Test
+﻿using System.IO;
+
+namespace WebView2_Test
 {
     /// <summary>WebView2に読み込ませるためのJsで実行する関数を保持させたクラス</summary>
     //[System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDual)]
@@ -15,16 +17,30 @@
         }
 
         //htmlを新しいウィンドウで開く
-        public void WindowOpen(string url)
+        public void WindowOpen(string formname, string path)
         {
-            //Form1で新しいサブフォームを生成
-            (new SubFormController()).CreateSubForm1(url);
+            switch (formname)
+            {
+                case "subform1":
+                    //Form1で新しいサブフォームを生成
+                    (new SubFormController()).CreateSubForm1(formname, path);
+                    break;
+                default:
+                    break;
+            }
         }
 
         //ウィンドウを閉じる
-        public void WindowClose()
+        public void WindowClose(string formname)
         {
-            (new SubFormController()).CloseSubForm1();
+            switch (formname)
+            {
+                case "subform1":
+                    (new SubFormController()).CloseSubForm1(formname);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -18,8 +18,8 @@ namespace WebView2_Test
             Application.SetCompatibleTextRenderingDefault(false);
 
             //htmlをForm1で開く
-            string url = System.IO.Path.GetFullPath(@"..\\..\\html\\sample.html");
-            Application.Run(new Form1(url));
+            string path = System.IO.Path.GetFullPath(@"..\\..\\html\\sample.html");
+            Application.Run(new Form1(path));
         }
     }
 }

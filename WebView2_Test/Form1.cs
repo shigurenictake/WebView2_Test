@@ -10,7 +10,7 @@ namespace WebView2_Test
         private JsToCs jsToCs = new JsToCs();
 
         //コンストラクタ
-        public Form1(string url)
+        public Form1(string path)
         {
             //JsToCsクラスでForm1のフォーム取得参照用
             jsToCs.form1 = this;
@@ -18,8 +18,8 @@ namespace WebView2_Test
             InitializeComponent();
 
             //URLを設定
-            this.textBox_UrlBar.Text = url;
-            this.webView.Source = new Uri(url);
+            this.textBox_UrlBar.Text = path;
+            this.webView.Source = new Uri(path);
 
             //WebView2のロード完了時のイベント
             webView.NavigationCompleted += WebView_NavigationCompleted;
