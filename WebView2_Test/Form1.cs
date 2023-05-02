@@ -1,7 +1,5 @@
 ﻿using Microsoft.Web.WebView2.Core;//WebView2
 using System;
-using System.Runtime.InteropServices;
-using System.Security.Policy;
 using System.Windows.Forms;
 
 namespace WebView2_Test
