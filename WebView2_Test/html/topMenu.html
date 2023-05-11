@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<style>
+    .div-1 {
+        background-color: #FBD603;
+    }
+
+    .div-2 {
+        background-color: #ABBAEA;
+    }
+</style>
+
+<html lang="ja">
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <script language="javascript" type="text/javascript">
+
+        //C#からJavaScriptを呼び出す
+        function jsFunc1(str1) {
+            //タグを生成
+            const tag = document.createElement("div");
+            tag.innerText = str1;
+
+            //未完了のリストに追加
+            document.getElementById("CsToJs").appendChild(tag);
+
+            return "success"
+        }
+
+        //JavaScriptからC#を呼び出す
+        function ButtonClick_JsToCs() {
+            //テキストボックスから値取得
+            const sendtext = document.getElementById('sendtext');
+
+            //C#の関数の実行
+            chrome.webview.hostObjects.jsToCs.JsToCsMethod(sendtext.value);
+        }
+    </script>
+</head>
+
+<body>
+
+    <p><b>トップメニュー</b></p>
+
+    <div>
+        <button onclick="closeWindow()">htmlからwindow.closeする(ウィンドウを閉じる)</buttron>
+        <script>
+            function closeWindow() {
+                window.close();
+            }
+        </script>
+
+    </div>
+    <br>
+
+    <div>
+        <button onclick="openNewWindowAuto()">htmlからwindow.openする(WebView2が自動で新しいウィンドウでページを開く。ウィンドウは独立する。)</button>
+        <script>
+            function openNewWindowAuto() {
+                window.open("./subWindow.html", "autosub1", "width=800,height=300");
+            }
+        </script>
+    </div>
+    <br>
+    
+    <div>
+        <button onclick="openNewWindow()">C#から新しいフォーム(ウィンドウ)でページを開く。(メインフォームの子となり、メインフォームが閉じると閉じる)</button>
+        <script>
+            function openNewWindow() {
+                // 現在のURLの情報を取得する
+                const currentUrl = new URL(window.location.href);
+
+                // 相対パスをフルパスに変換する
+                const relativePath = "./subWindow.html";
+                const fullPath = new URL(relativePath, currentUrl).href;
+
+                console.log(fullPath);
+
+                //C#の関数の実行。htmlを新しいフォームで開く
+                chrome.webview.hostObjects.jsToCs.WindowOpen("subform1", fullPath);
+            }
+        </script>
+    </div>
+    <br>
+
+
+    <div id="CsToJs" class="div-1">
+        <p><b>◆C#から受け取った文字列＞</b></p>
+    </div>
+    <br>
+
+    <div id="JsToCs" class="div-2">
+        <p><b>◆JavaScriptからC#へ送信＞</b></p>
+        <input type="text" id="sendtext">
+        <input type="button" value='▼送信' onclick="ButtonClick_JsToCs();">
+    </div>
+    <br>
+
+</body>
+</html>

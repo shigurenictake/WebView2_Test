@@ -8,56 +8,54 @@ namespace WebView2_Test
         public void CreateSubForm1(string formname, string path)
         {
             //指定した名前のフォームがあれば取得する
-            Form1 subform1 = this.GetForm1ByName(formname);
+            Form subform = this.GetFormByName(formname);
 
             //二重起動防止
-            if (subform1 == null || subform1.IsDisposed)
+            if (subform == null || subform.IsDisposed)
             {
                 //ヌル、または破棄されていたら、新しいウィンドウで起動する
-                subform1 = new Form1(path);
-                subform1.Show();
+                subform = new Form1(path);
+                subform.Show();
                 //フォーム名を設定
-                subform1.Name = formname;
+                subform.Name = formname;
             }
             //フォームにフォーカスを当てる。
-            if (!subform1.Visible)
+            if (!subform.Visible)
             {
-                subform1.Show();
+                subform.Show();
             }
             else
             {
-                subform1.Activate();
+                subform.Activate();
             }
         }
 
-        //サブフォームを閉じる Form1用
-        public void CloseSubForm1(string formname)
+        //指定した名前のFormオブジェクトがあれば閉じる
+        public void CloseForm(string formname)
         {
             //指定した名前のフォームがあれば取得する
-            Form1 subform1 = this.GetForm1ByName(formname);
+            Form form = this.GetFormByName(formname);
 
-            //subform1があれば削除する
-            if (subform1 != null)
+            //subformがあれば削除する
+            if (form != null)
             {
-                subform1.Close();
+                form.Close();
             }
         }
 
-        //指定した名前のForm1オブジェクトがあれば取得する Form1用
-        public Form1 GetForm1ByName(string formname)
+        //指定した名前のFormオブジェクトがあれば取得する
+        public Form GetFormByName(string formname)
         {
-            Form1 subform1 = null;
-            //Console.WriteLine(Application.OpenForms.Count);
+            Form retform = null;
             foreach (Form form in Application.OpenForms)
             {
-                //Console.WriteLine($"{form.Text}" + "," + $"{form.Name}");
                 if (form.Name == formname)
                 {
-                    subform1 = (Form1)form;
+                    retform = (Form)form;
                     break;
                 }
             }
-            return subform1;
+            return retform;
         }
     }
 }

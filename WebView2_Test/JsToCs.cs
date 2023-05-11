@@ -36,7 +36,7 @@ namespace WebView2_Test
             switch (formname)
             {
                 case "subform1":
-                    (new SubFormController()).CloseSubForm1(formname);
+                    (new SubFormController()).CloseForm(formname);
                     break;
                 default:
                     break;

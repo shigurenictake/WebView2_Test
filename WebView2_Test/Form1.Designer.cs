@@ -64,7 +64,7 @@
             this.textBox_UrlBar.Name = "textBox_UrlBar";
             this.textBox_UrlBar.Size = new System.Drawing.Size(609, 19);
             this.textBox_UrlBar.TabIndex = 1;
-            this.textBox_UrlBar.TextChanged += new System.EventHandler(this.textBox_UrlBar_TextChanged);
+            this.textBox_UrlBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_UrlBar_KeyDown);
             // 
             // label_CsToJs
             // 
@@ -145,6 +145,7 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.Location = new System.Drawing.Point(932, 12);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
