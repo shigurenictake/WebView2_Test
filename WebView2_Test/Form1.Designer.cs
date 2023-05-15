@@ -39,7 +39,17 @@
             this.label_CsToJsReturn = new System.Windows.Forms.Label();
             this.richTextBox_CsToJsReturn = new System.Windows.Forms.RichTextBox();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // webView
@@ -50,9 +60,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.webView.CreationProperties = null;
             this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView.Location = new System.Drawing.Point(12, 37);
+            this.webView.Location = new System.Drawing.Point(3, 28);
             this.webView.Name = "webView";
-            this.webView.Size = new System.Drawing.Size(643, 401);
+            this.webView.Size = new System.Drawing.Size(824, 504);
             this.webView.TabIndex = 0;
             this.webView.ZoomFactor = 1D;
             // 
@@ -60,17 +70,16 @@
             // 
             this.textBox_UrlBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_UrlBar.Location = new System.Drawing.Point(46, 12);
+            this.textBox_UrlBar.Location = new System.Drawing.Point(36, 3);
             this.textBox_UrlBar.Name = "textBox_UrlBar";
-            this.textBox_UrlBar.Size = new System.Drawing.Size(609, 19);
+            this.textBox_UrlBar.Size = new System.Drawing.Size(791, 19);
             this.textBox_UrlBar.TabIndex = 1;
             this.textBox_UrlBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_UrlBar_KeyDown);
             // 
             // label_CsToJs
             // 
-            this.label_CsToJs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_CsToJs.AutoSize = true;
-            this.label_CsToJs.Location = new System.Drawing.Point(661, 37);
+            this.label_CsToJs.Location = new System.Drawing.Point(3, 28);
             this.label_CsToJs.Name = "label_CsToJs";
             this.label_CsToJs.Size = new System.Drawing.Size(126, 12);
             this.label_CsToJs.TabIndex = 2;
@@ -78,9 +87,8 @@
             // 
             // label_JsToCs
             // 
-            this.label_JsToCs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_JsToCs.AutoSize = true;
-            this.label_JsToCs.Location = new System.Drawing.Point(661, 230);
+            this.label_JsToCs.Location = new System.Drawing.Point(3, 3);
             this.label_JsToCs.Name = "label_JsToCs";
             this.label_JsToCs.Size = new System.Drawing.Size(165, 12);
             this.label_JsToCs.TabIndex = 4;
@@ -88,18 +96,18 @@
             // 
             // richTextBox_JsToCs
             // 
-            this.richTextBox_JsToCs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.richTextBox_JsToCs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_JsToCs.Location = new System.Drawing.Point(662, 245);
+            this.richTextBox_JsToCs.Location = new System.Drawing.Point(3, 18);
             this.richTextBox_JsToCs.Name = "richTextBox_JsToCs";
-            this.richTextBox_JsToCs.Size = new System.Drawing.Size(345, 193);
+            this.richTextBox_JsToCs.Size = new System.Drawing.Size(317, 187);
             this.richTextBox_JsToCs.TabIndex = 5;
             this.richTextBox_JsToCs.Text = "";
             // 
             // button_CsToJs
             // 
-            this.button_CsToJs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_CsToJs.Location = new System.Drawing.Point(661, 77);
+            this.button_CsToJs.Location = new System.Drawing.Point(3, 68);
             this.button_CsToJs.Name = "button_CsToJs";
             this.button_CsToJs.Size = new System.Drawing.Size(66, 23);
             this.button_CsToJs.TabIndex = 6;
@@ -110,7 +118,7 @@
             // label_UrlBar
             // 
             this.label_UrlBar.AutoSize = true;
-            this.label_UrlBar.Location = new System.Drawing.Point(13, 19);
+            this.label_UrlBar.Location = new System.Drawing.Point(3, 3);
             this.label_UrlBar.Name = "label_UrlBar";
             this.label_UrlBar.Size = new System.Drawing.Size(27, 12);
             this.label_UrlBar.TabIndex = 7;
@@ -118,17 +126,17 @@
             // 
             // textBox_CsToJs
             // 
-            this.textBox_CsToJs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_CsToJs.Location = new System.Drawing.Point(661, 52);
+            this.textBox_CsToJs.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_CsToJs.Location = new System.Drawing.Point(3, 43);
             this.textBox_CsToJs.Name = "textBox_CsToJs";
-            this.textBox_CsToJs.Size = new System.Drawing.Size(346, 19);
+            this.textBox_CsToJs.Size = new System.Drawing.Size(317, 19);
             this.textBox_CsToJs.TabIndex = 8;
             // 
             // label_CsToJsReturn
             // 
-            this.label_CsToJsReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_CsToJsReturn.AutoSize = true;
-            this.label_CsToJsReturn.Location = new System.Drawing.Point(663, 107);
+            this.label_CsToJsReturn.Location = new System.Drawing.Point(3, 94);
             this.label_CsToJsReturn.Name = "label_CsToJsReturn";
             this.label_CsToJsReturn.Size = new System.Drawing.Size(90, 12);
             this.label_CsToJsReturn.TabIndex = 9;
@@ -136,17 +144,19 @@
             // 
             // richTextBox_CsToJsReturn
             // 
-            this.richTextBox_CsToJsReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox_CsToJsReturn.Location = new System.Drawing.Point(663, 123);
+            this.richTextBox_CsToJsReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox_CsToJsReturn.Location = new System.Drawing.Point(5, 109);
             this.richTextBox_CsToJsReturn.Name = "richTextBox_CsToJsReturn";
-            this.richTextBox_CsToJsReturn.Size = new System.Drawing.Size(344, 87);
+            this.richTextBox_CsToJsReturn.Size = new System.Drawing.Size(315, 203);
             this.richTextBox_CsToJsReturn.TabIndex = 10;
             this.richTextBox_CsToJsReturn.Text = "";
             // 
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClose.Location = new System.Drawing.Point(932, 12);
+            this.buttonClose.Location = new System.Drawing.Point(245, 3);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
             this.buttonClose.TabIndex = 11;
@@ -154,27 +164,99 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 12);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1171, 541);
+            this.tableLayoutPanel1.TabIndex = 12;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.richTextBox_JsToCs);
+            this.panel3.Controls.Add(this.label_JsToCs);
+            this.panel3.Location = new System.Drawing.Point(3, 324);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(323, 208);
+            this.panel3.TabIndex = 14;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.webView);
+            this.panel1.Controls.Add(this.label_UrlBar);
+            this.panel1.Controls.Add(this.textBox_UrlBar);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(830, 535);
+            this.panel1.TabIndex = 13;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(839, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(329, 535);
+            this.tableLayoutPanel2.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.label_CsToJs);
+            this.panel2.Controls.Add(this.buttonClose);
+            this.panel2.Controls.Add(this.richTextBox_CsToJsReturn);
+            this.panel2.Controls.Add(this.textBox_CsToJs);
+            this.panel2.Controls.Add(this.label_CsToJsReturn);
+            this.panel2.Controls.Add(this.button_CsToJs);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(323, 315);
+            this.panel2.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 450);
-            this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.richTextBox_CsToJsReturn);
-            this.Controls.Add(this.label_CsToJsReturn);
-            this.Controls.Add(this.textBox_CsToJs);
-            this.Controls.Add(this.label_UrlBar);
-            this.Controls.Add(this.button_CsToJs);
-            this.Controls.Add(this.richTextBox_JsToCs);
-            this.Controls.Add(this.label_JsToCs);
-            this.Controls.Add(this.label_CsToJs);
-            this.Controls.Add(this.textBox_UrlBar);
-            this.Controls.Add(this.webView);
+            this.ClientSize = new System.Drawing.Size(1192, 565);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -191,6 +273,11 @@
         private System.Windows.Forms.Label label_CsToJsReturn;
         private System.Windows.Forms.RichTextBox richTextBox_CsToJsReturn;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 

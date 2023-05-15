@@ -102,8 +102,6 @@ namespace WebView2_Test
                     break;
             }
         }
-
-
     }
 
 }
