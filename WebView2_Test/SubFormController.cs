@@ -4,8 +4,8 @@ namespace WebView2_Test
 {
     internal class SubFormController
     {
-        //サブフォーム生成 Form1用
-        public void CreateSubForm1(string formname, string path)
+        //SubForm生成
+        public void CreateSubForm(string formname, string url)
         {
             //指定した名前のフォームがあれば取得する
             Form subform = this.GetFormByName(formname);
@@ -14,7 +14,7 @@ namespace WebView2_Test
             if (subform == null || subform.IsDisposed)
             {
                 //ヌル、または破棄されていたら、新しいウィンドウで起動する
-                subform = new Form1(path);
+                subform = new SubForm(url);
                 subform.Show();
                 //フォーム名を設定
                 subform.Name = formname;

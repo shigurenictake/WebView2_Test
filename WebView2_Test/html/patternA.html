@@ -40,7 +40,7 @@
 
 <body>
 
-    <p><b>サブウィンドウ</b></p>
+    <p><b>patternA.html</b></p>
 
     <button onclick="closeWindow()">ウィンドウを閉じる</button>
     <script>
@@ -48,7 +48,7 @@
             window.close();
 
             //C#の関数の実行 - ウィンドウを閉じる
-            chrome.webview.hostObjects.jsToCs.WindowClose("subform1");
+            chrome.webview.hostObjects.jsToCs.WindowClose("patternA.html");
             
         }
     </script>

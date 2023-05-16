@@ -16,10 +16,7 @@ namespace WebView2_Test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            //htmlをForm1で開く
-            string path = System.IO.Path.GetFullPath(@"..\..\html\topMenu.html");
-            Application.Run(new Form1(path));
+            Application.Run(new MainForm());
         }
     }
 }

@@ -40,7 +40,7 @@
 
 <body>
 
-    <p><b>トップメニュー</b></p>
+    <p><b>トップメニュー(topMenu.html)</b></p>
 
     <div>
         <button onclick="closeWindow()">htmlからwindow.closeする(ウィンドウを閉じる)</buttron>
@@ -57,7 +57,7 @@
         <button onclick="openNewWindowAuto()">htmlからwindow.openする(WebView2が自動で新しいウィンドウでページを開く。ウィンドウは独立する。)</button>
         <script>
             function openNewWindowAuto() {
-                window.open("./subWindow.html", "autosub1", "width=800,height=300");
+                window.open("./patternA.html", "autosub1", "width=800,height=300");
             }
         </script>
     </div>
@@ -71,13 +71,13 @@
                 const currentUrl = new URL(window.location.href);
 
                 // 相対パスをフルパスに変換する
-                const relativePath = "./subWindow.html";
+                const relativePath = "./subPatternA.html";
                 const fullPath = new URL(relativePath, currentUrl).href;
 
                 console.log(fullPath);
 
                 //C#の関数の実行。htmlを新しいフォームで開く
-                chrome.webview.hostObjects.jsToCs.WindowOpen("subform1", fullPath);
+                chrome.webview.hostObjects.jsToCs.WindowOpen(fullPath);
             }
         </script>
     </div>

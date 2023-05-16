@@ -1,30 +1,33 @@
-﻿using Microsoft.Web;
-using Microsoft.Web.WebView2.Core;//WebView2
-using Microsoft.Web.WebView2.WinForms;
+﻿using Microsoft.Web.WebView2.Core;
 using System;
-using System.Reflection;
-using System.Security.Cryptography;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WebView2_Test
 {
-    public partial class Form1 : Form
+    public partial class SubForm : Form
     {
         //JavaScriptで呼ぶ関数を保持するオブジェクト
         private JsToCs jsToCs = new JsToCs();
 
         //コンストラクタ
-        public Form1(string path)
+        public SubForm(string url)
         {
             //JsToCsクラスでForm1のフォーム取得参照用
-            jsToCs.form1 = this;
+            jsToCs.subform = this;
 
             InitializeComponent();
 
             //URLを設定
-            this.textBox_UrlBar.Text = path;
-            this.webView.Source = new Uri(path);
+            //string path = System.IO.Path.GetFullPath(url);
+            this.textBoxUrlBar.Text = url;
+            this.webView.Source = new Uri(url);
 
             //WebView2のロード完了時のイベント
             webView.NavigationCompleted += WebView_NavigationCompleted;
@@ -42,7 +45,7 @@ namespace WebView2_Test
 
                     //URLバーを更新する
                     string url = this.webView.Source.ToString();
-                    this.textBox_UrlBar.Text = url;
+                    this.textBoxUrlBar.Text = url;
 
                     //本フォームのWebView2内でhtmlを切り替える
                     Transform(url);
@@ -56,15 +59,12 @@ namespace WebView2_Test
         }
 
         //イベント - URLバーでキーダウン
-        private void textBox_UrlBar_KeyDown(object sender, KeyEventArgs e)
+        private void textBoxUrlBar_KeyDown(object sender, KeyEventArgs e)
         {
-            //EnterキーならばURL反映
+            //エンターならばURLを反映
             if (e.KeyCode == Keys.Enter)
             {
-                if (webView != null && webView.CoreWebView2 != null)
-                {
-                    webView.CoreWebView2.Navigate(this.textBox_UrlBar.Text);
-                }
+                this.webView.CoreWebView2.Navigate(this.textBoxUrlBar.Text);
             }
         }
 
@@ -90,18 +90,18 @@ namespace WebView2_Test
         {
             //ファイル名を取得
             string fimeneme = System.IO.Path.GetFileName(url);
-            switch(fimeneme){
-                case "patternA.html":
+            switch (fimeneme)
+            {
+                case "subPatternA.html":
                     //作成予定
                     break;
-                case "patternB.html":
+                case "subPatternB.html":
                     //作成予定
                     break;
                 default:
-                    Console.WriteLine("未登録のhtmlです");
+                    MessageBox.Show("未登録のhtmlです");
                     break;
             }
         }
     }
-
 }

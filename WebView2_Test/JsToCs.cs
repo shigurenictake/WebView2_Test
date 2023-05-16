@@ -7,23 +7,34 @@ namespace WebView2_Test
     [System.Runtime.InteropServices.ComVisible(true)]
     public class JsToCs
     {
-        //Form1のメンバ取得用
-        public Form1 form1;
+        //Formのメンバ取得用(初期化はForm側で行う)
+        public MainForm mainform = null;
+        public SubForm subform = null;
 
         //Jsからの呼び出し
         public void JsToCsMethod(string strText)
         {
-            form1.richTextBox_JsToCs.AppendText(strText + "\n");
+            if (mainform != null)
+            {
+                mainform.richTextBox_JsToCs.AppendText(strText + "\n");
+            }
+            if (subform != null)
+            {
+                subform.richTextBox_JsToCs.AppendText(strText + "\n");
+            }
         }
 
         //htmlを新しいウィンドウで開く
-        public void WindowOpen(string formname, string path)
+        public void WindowOpen(string url)
         {
-            switch (formname)
+            string fimeneme = System.IO.Path.GetFileName(url);
+
+            switch (fimeneme)
             {
-                case "subform1":
-                    //Form1で新しいサブフォームを生成
-                    (new SubFormController()).CreateSubForm1(formname, path);
+                case "subPatternA.html":
+                    (new SubFormController()).CreateSubForm(fimeneme, url);
+                    break;
+                case "subpatternB.html":
                     break;
                 default:
                     break;
@@ -35,8 +46,10 @@ namespace WebView2_Test
         {
             switch (formname)
             {
-                case "subform1":
+                case "subPatternA.html":
                     (new SubFormController()).CloseForm(formname);
+                    break;
+                case "subpatternB.html":
                     break;
                 default:
                     break;
