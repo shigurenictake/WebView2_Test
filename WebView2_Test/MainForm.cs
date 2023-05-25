@@ -22,6 +22,11 @@ namespace WebView2_Test
 
             InitializeComponent();
 
+            //パネル1のスクロールバーを非表示　→なぜか非表示にならない
+            splitContainerRightUD.Panel1.HorizontalScroll.Visible = false;
+            //パネル1をパネル2と連動スクロール
+            splitContainerRightUD.Panel2.Scroll += Panel2_Scroll;
+
             //URLを設定
             string path = System.IO.Path.GetFullPath(@"..\..\html\topMenu.html");
             this.textBoxUrlBar.Text = path;
@@ -29,6 +34,12 @@ namespace WebView2_Test
 
             //WebView2のロード完了時のイベント
             webView.NavigationCompleted += WebView_NavigationCompleted;
+        }
+
+        //パネル1をパネル2と連動スクロール
+        private void Panel2_Scroll(object sender, ScrollEventArgs e)
+        {
+            splitContainerRightUD.Panel1.HorizontalScroll.Value = splitContainerRightUD.Panel2.HorizontalScroll.Value;
         }
 
         //WebView2のロード完了時
@@ -107,7 +118,7 @@ namespace WebView2_Test
         bool swScrollVisibleOld = false;
         private void splitContainerRightUD_Panel1_SizeChanged(object sender, EventArgs e)
         {
-            if(isEveRunning == false)
+            if (isEveRunning == false)
             {
                 isEveRunning = true;
                 AdjustSplitter();
