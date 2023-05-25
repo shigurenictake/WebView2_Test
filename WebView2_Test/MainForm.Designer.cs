@@ -36,21 +36,29 @@
             this.label_CsToJsReturn = new System.Windows.Forms.Label();
             this.richTextBox_CsToJsReturn = new System.Windows.Forms.RichTextBox();
             this.buttonClose = new System.Windows.Forms.Button();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.panelLeft = new System.Windows.Forms.Panel();
-            this.panelRight = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panelTopRightButton = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.splitContainerLR = new System.Windows.Forms.SplitContainer();
+            this.splitContainerLeftUD = new System.Windows.Forms.SplitContainer();
+            this.splitContainerRightUD = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
-            this.tableLayoutPanel.SuspendLayout();
-            this.panelLeft.SuspendLayout();
-            this.panelRight.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panelTopRightButton.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerLR)).BeginInit();
+            this.splitContainerLR.Panel1.SuspendLayout();
+            this.splitContainerLR.Panel2.SuspendLayout();
+            this.splitContainerLR.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerLeftUD)).BeginInit();
+            this.splitContainerLeftUD.Panel2.SuspendLayout();
+            this.splitContainerLeftUD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerRightUD)).BeginInit();
+            this.splitContainerRightUD.Panel1.SuspendLayout();
+            this.splitContainerRightUD.Panel2.SuspendLayout();
+            this.splitContainerRightUD.SuspendLayout();
             this.SuspendLayout();
             // 
             // webView
@@ -61,19 +69,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.webView.CreationProperties = null;
             this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView.Location = new System.Drawing.Point(3, 28);
+            this.webView.Location = new System.Drawing.Point(3, 3);
             this.webView.Name = "webView";
-            this.webView.Size = new System.Drawing.Size(606, 324);
+            this.webView.Size = new System.Drawing.Size(910, 624);
             this.webView.TabIndex = 0;
             this.webView.ZoomFactor = 1D;
             // 
             // textBoxUrlBar
             // 
-            this.textBoxUrlBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxUrlBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUrlBar.Location = new System.Drawing.Point(3, 3);
+            this.textBoxUrlBar.Location = new System.Drawing.Point(3, 633);
             this.textBoxUrlBar.Name = "textBoxUrlBar";
-            this.textBoxUrlBar.Size = new System.Drawing.Size(606, 19);
+            this.textBoxUrlBar.Size = new System.Drawing.Size(910, 19);
             this.textBoxUrlBar.TabIndex = 1;
             this.textBoxUrlBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUrlBar_KeyDown);
             // 
@@ -84,7 +92,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox_JsToCs.Location = new System.Drawing.Point(6, 18);
             this.richTextBox_JsToCs.Name = "richTextBox_JsToCs";
-            this.richTextBox_JsToCs.Size = new System.Drawing.Size(239, 133);
+            this.richTextBox_JsToCs.Size = new System.Drawing.Size(438, 117);
             this.richTextBox_JsToCs.TabIndex = 5;
             this.richTextBox_JsToCs.Text = "";
             // 
@@ -104,7 +112,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_CsToJs.Location = new System.Drawing.Point(6, 18);
             this.textBox_CsToJs.Name = "textBox_CsToJs";
-            this.textBox_CsToJs.Size = new System.Drawing.Size(239, 19);
+            this.textBox_CsToJs.Size = new System.Drawing.Size(438, 19);
             this.textBox_CsToJs.TabIndex = 8;
             // 
             // label_CsToJsReturn
@@ -123,7 +131,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox_CsToJsReturn.Location = new System.Drawing.Point(6, 84);
             this.richTextBox_CsToJsReturn.Name = "richTextBox_CsToJsReturn";
-            this.richTextBox_CsToJsReturn.Size = new System.Drawing.Size(239, 61);
+            this.richTextBox_CsToJsReturn.Size = new System.Drawing.Size(438, 102);
             this.richTextBox_CsToJsReturn.TabIndex = 10;
             this.richTextBox_CsToJsReturn.Text = "";
             // 
@@ -138,52 +146,14 @@
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
-            // tableLayoutPanel
-            // 
-            this.tableLayoutPanel.ColumnCount = 2;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel.Controls.Add(this.panelLeft, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.panelRight, 1, 0);
-            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 1;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(884, 361);
-            this.tableLayoutPanel.TabIndex = 12;
-            // 
-            // panelLeft
-            // 
-            this.panelLeft.AutoScroll = true;
-            this.panelLeft.Controls.Add(this.textBoxUrlBar);
-            this.panelLeft.Controls.Add(this.webView);
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelLeft.Location = new System.Drawing.Point(3, 3);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(612, 355);
-            this.panelLeft.TabIndex = 13;
-            // 
-            // panelRight
-            // 
-            this.panelRight.AutoScroll = true;
-            this.panelRight.Controls.Add(this.groupBox2);
-            this.panelRight.Controls.Add(this.panelTopRightButton);
-            this.panelRight.Controls.Add(this.groupBox1);
-            this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRight.Location = new System.Drawing.Point(621, 3);
-            this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(260, 355);
-            this.panelRight.TabIndex = 14;
-            // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.richTextBox_JsToCs);
-            this.groupBox2.Location = new System.Drawing.Point(3, 195);
+            this.groupBox2.Location = new System.Drawing.Point(3, 201);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(251, 157);
+            this.groupBox2.Size = new System.Drawing.Size(450, 141);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "◆JavaScriptから受け取った値＞";
@@ -194,7 +164,7 @@
             this.panelTopRightButton.Controls.Add(this.button1);
             this.panelTopRightButton.Controls.Add(this.button2);
             this.panelTopRightButton.Controls.Add(this.buttonClose);
-            this.panelTopRightButton.Location = new System.Drawing.Point(13, 3);
+            this.panelTopRightButton.Location = new System.Drawing.Point(211, 1);
             this.panelTopRightButton.Name = "panelTopRightButton";
             this.panelTopRightButton.Size = new System.Drawing.Size(244, 29);
             this.panelTopRightButton.TabIndex = 13;
@@ -227,30 +197,104 @@
             this.groupBox1.Controls.Add(this.textBox_CsToJs);
             this.groupBox1.Controls.Add(this.label_CsToJsReturn);
             this.groupBox1.Controls.Add(this.button_CsToJs);
-            this.groupBox1.Location = new System.Drawing.Point(3, 38);
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(251, 151);
+            this.groupBox1.Size = new System.Drawing.Size(450, 192);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "◆C#からJavaScriptへ＞";
+            // 
+            // splitContainerLR
+            // 
+            this.splitContainerLR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerLR.IsSplitterFixed = true;
+            this.splitContainerLR.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerLR.Name = "splitContainerLR";
+            // 
+            // splitContainerLR.Panel1
+            // 
+            this.splitContainerLR.Panel1.Controls.Add(this.splitContainerLeftUD);
+            // 
+            // splitContainerLR.Panel2
+            // 
+            this.splitContainerLR.Panel2.Controls.Add(this.splitContainerRightUD);
+            this.splitContainerLR.Size = new System.Drawing.Size(1384, 661);
+            this.splitContainerLR.SplitterDistance = 920;
+            this.splitContainerLR.TabIndex = 13;
+            // 
+            // splitContainerLeftUD
+            // 
+            this.splitContainerLeftUD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitContainerLeftUD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerLeftUD.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainerLeftUD.IsSplitterFixed = true;
+            this.splitContainerLeftUD.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerLeftUD.Name = "splitContainerLeftUD";
+            this.splitContainerLeftUD.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.splitContainerLeftUD.Panel1Collapsed = true;
+            this.splitContainerLeftUD.Panel1MinSize = 35;
+            // 
+            // splitContainerLeftUD.Panel2
+            // 
+            this.splitContainerLeftUD.Panel2.Controls.Add(this.textBoxUrlBar);
+            this.splitContainerLeftUD.Panel2.Controls.Add(this.webView);
+            this.splitContainerLeftUD.Size = new System.Drawing.Size(920, 661);
+            this.splitContainerLeftUD.SplitterDistance = 35;
+            this.splitContainerLeftUD.TabIndex = 0;
+            // 
+            // splitContainerRightUD
+            // 
+            this.splitContainerRightUD.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.splitContainerRightUD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerRightUD.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainerRightUD.IsSplitterFixed = true;
+            this.splitContainerRightUD.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerRightUD.Name = "splitContainerRightUD";
+            this.splitContainerRightUD.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainerRightUD.Panel1
+            // 
+            this.splitContainerRightUD.Panel1.AutoScroll = true;
+            this.splitContainerRightUD.Panel1.AutoScrollMinSize = new System.Drawing.Size(400, 0);
+            this.splitContainerRightUD.Panel1.Controls.Add(this.panelTopRightButton);
+            this.splitContainerRightUD.Panel1MinSize = 35;
+            // 
+            // splitContainerRightUD.Panel2
+            // 
+            this.splitContainerRightUD.Panel2.AutoScroll = true;
+            this.splitContainerRightUD.Panel2.AutoScrollMinSize = new System.Drawing.Size(400, 600);
+            this.splitContainerRightUD.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainerRightUD.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainerRightUD.Panel2.SizeChanged += new System.EventHandler(this.splitContainer1_Panel2_SizeChanged);
+            this.splitContainerRightUD.Size = new System.Drawing.Size(460, 661);
+            this.splitContainerRightUD.SplitterDistance = 35;
+            this.splitContainerRightUD.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 361);
-            this.Controls.Add(this.tableLayoutPanel);
+            this.ClientSize = new System.Drawing.Size(1384, 661);
+            this.Controls.Add(this.splitContainerLR);
             this.Name = "MainForm";
             this.Text = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.webView)).EndInit();
-            this.tableLayoutPanel.ResumeLayout(false);
-            this.panelLeft.ResumeLayout(false);
-            this.panelLeft.PerformLayout();
-            this.panelRight.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.panelTopRightButton.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.splitContainerLR.Panel1.ResumeLayout(false);
+            this.splitContainerLR.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerLR)).EndInit();
+            this.splitContainerLR.ResumeLayout(false);
+            this.splitContainerLeftUD.Panel2.ResumeLayout(false);
+            this.splitContainerLeftUD.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerLeftUD)).EndInit();
+            this.splitContainerLeftUD.ResumeLayout(false);
+            this.splitContainerRightUD.Panel1.ResumeLayout(false);
+            this.splitContainerRightUD.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerRightUD)).EndInit();
+            this.splitContainerRightUD.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -265,14 +309,14 @@
         private System.Windows.Forms.Label label_CsToJsReturn;
         private System.Windows.Forms.RichTextBox richTextBox_CsToJsReturn;
         private System.Windows.Forms.Button buttonClose;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
-        private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelTopRightButton;
-        private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.SplitContainer splitContainerLR;
+        private System.Windows.Forms.SplitContainer splitContainerLeftUD;
+        private System.Windows.Forms.SplitContainer splitContainerRightUD;
     }
 }
 

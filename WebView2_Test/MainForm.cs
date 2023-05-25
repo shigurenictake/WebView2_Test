@@ -101,6 +101,43 @@ namespace WebView2_Test
                     break;
             }
         }
+
+        bool isEveRunning = false;
+        bool swScrollVisible = false;
+        bool swScrollVisibleOld = false;
+        private void splitContainer1_Panel2_SizeChanged(object sender, EventArgs e)
+        {
+            if(isEveRunning == false)
+            {
+                isEveRunning = true;
+                AdjustSplitter();
+                isEveRunning = false;
+            }
+        }
+        private void AdjustSplitter()
+        {
+            if (splitContainerRightUD.Panel2.HorizontalScroll.Visible)
+            {
+                swScrollVisible = true;
+            }
+            else
+            {
+                swScrollVisible = false;
+            }
+
+            if ((swScrollVisible == true) && (swScrollVisibleOld == false))
+            {
+                Console.WriteLine("水平スクロールバーが表示されました");
+                splitContainerRightUD.SplitterDistance = 50;
+            }
+            else if ((swScrollVisible == false) && (swScrollVisibleOld == true))
+            {
+                Console.WriteLine("水平スクロールバーが非表示になりました");
+                splitContainerRightUD.SplitterDistance = 35;
+            }
+
+            swScrollVisibleOld = swScrollVisible;
+        }
     }
 
 }
