@@ -105,7 +105,7 @@ namespace WebView2_Test
         bool isEveRunning = false;
         bool swScrollVisible = false;
         bool swScrollVisibleOld = false;
-        private void splitContainer1_Panel2_SizeChanged(object sender, EventArgs e)
+        private void splitContainerRightUD_Panel1_SizeChanged(object sender, EventArgs e)
         {
             if(isEveRunning == false)
             {
@@ -116,7 +116,7 @@ namespace WebView2_Test
         }
         private void AdjustSplitter()
         {
-            if (splitContainerRightUD.Panel2.HorizontalScroll.Visible)
+            if (splitContainerRightUD.Panel1.HorizontalScroll.Visible)
             {
                 swScrollVisible = true;
             }

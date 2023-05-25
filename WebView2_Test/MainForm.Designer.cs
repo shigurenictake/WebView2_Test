@@ -257,6 +257,7 @@
             this.splitContainerRightUD.Panel1.AutoScroll = true;
             this.splitContainerRightUD.Panel1.AutoScrollMinSize = new System.Drawing.Size(400, 0);
             this.splitContainerRightUD.Panel1.Controls.Add(this.panelTopRightButton);
+            this.splitContainerRightUD.Panel1.SizeChanged += new System.EventHandler(this.splitContainerRightUD_Panel1_SizeChanged);
             this.splitContainerRightUD.Panel1MinSize = 35;
             // 
             // splitContainerRightUD.Panel2
@@ -265,7 +266,6 @@
             this.splitContainerRightUD.Panel2.AutoScrollMinSize = new System.Drawing.Size(400, 600);
             this.splitContainerRightUD.Panel2.Controls.Add(this.groupBox2);
             this.splitContainerRightUD.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainerRightUD.Panel2.SizeChanged += new System.EventHandler(this.splitContainer1_Panel2_SizeChanged);
             this.splitContainerRightUD.Size = new System.Drawing.Size(460, 661);
             this.splitContainerRightUD.SplitterDistance = 35;
             this.splitContainerRightUD.TabIndex = 0;
