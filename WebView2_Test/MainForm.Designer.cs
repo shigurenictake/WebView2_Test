@@ -38,7 +38,7 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelRight = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panelTopRightButton = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.tableLayoutPanel.SuspendLayout();
             this.panelLeft.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelRight.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panelTopRightButton.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -144,7 +144,7 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel.Controls.Add(this.panelLeft, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.panelRight, 1, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -164,17 +164,17 @@
             this.panelLeft.Size = new System.Drawing.Size(612, 355);
             this.panelLeft.TabIndex = 13;
             // 
-            // panel1
+            // panelRight
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.panelTopRightButton);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(621, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 355);
-            this.panel1.TabIndex = 14;
+            this.panelRight.AutoScroll = true;
+            this.panelRight.Controls.Add(this.groupBox2);
+            this.panelRight.Controls.Add(this.panelTopRightButton);
+            this.panelRight.Controls.Add(this.groupBox1);
+            this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelRight.Location = new System.Drawing.Point(621, 3);
+            this.panelRight.Name = "panelRight";
+            this.panelRight.Size = new System.Drawing.Size(260, 355);
+            this.panelRight.TabIndex = 14;
             // 
             // groupBox2
             // 
@@ -246,7 +246,7 @@
             this.tableLayoutPanel.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.panelRight.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.panelTopRightButton.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -268,7 +268,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panelTopRightButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelRight;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
