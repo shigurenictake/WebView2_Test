@@ -24,8 +24,6 @@ namespace WebView2_Test
 
             //パネル1のスクロールバーを非表示　→なぜか非表示にならない
             splitContainerRightUD.Panel1.HorizontalScroll.Visible = false;
-            //パネル1をパネル2と連動スクロール
-            splitContainerRightUD.Panel2.Scroll += Panel2_Scroll;
 
             //URLを設定
             string path = System.IO.Path.GetFullPath(@"..\..\html\topMenu.html");
@@ -34,12 +32,6 @@ namespace WebView2_Test
 
             //WebView2のロード完了時のイベント
             webView.NavigationCompleted += WebView_NavigationCompleted;
-        }
-
-        //パネル1をパネル2と連動スクロール
-        private void Panel2_Scroll(object sender, ScrollEventArgs e)
-        {
-            splitContainerRightUD.Panel1.HorizontalScroll.Value = splitContainerRightUD.Panel2.HorizontalScroll.Value;
         }
 
         //WebView2のロード完了時
@@ -113,42 +105,55 @@ namespace WebView2_Test
             }
         }
 
-        bool isEveRunning = false;
-        bool swScrollVisible = false;
-        bool swScrollVisibleOld = false;
+        //イベント スプリッターの移動完了時
+        private void splitContainerLR_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+            //連動スクロール用右上パネル(連動パネル)の位置を調整
+            AdjustPanelRUForLinkScroll();
+        }
+
+        //イベント 右上パネルのサイズ変更時
         private void splitContainerRightUD_Panel1_SizeChanged(object sender, EventArgs e)
         {
-            if (isEveRunning == false)
-            {
-                isEveRunning = true;
-                AdjustSplitter();
-                isEveRunning = false;
-            }
+            //連動スクロール用右上パネル(連動パネル)の位置を調整
+            AdjustPanelRUForLinkScroll();
         }
-        private void AdjustSplitter()
+
+        //連動スクロール用右上パネル(連動パネル)の幅と位置を調整
+        private void AdjustPanelRUForLinkScroll()
         {
-            if (splitContainerRightUD.Panel1.HorizontalScroll.Visible)
+            //右下パネルのスクロールバー出現しているか判定
+            if (splitContainerRightUD.Panel2.HorizontalScroll.Visible == true)
             {
-                swScrollVisible = true;
+                //幅を右下パネルの最小幅に固定
+                this.panelRUForLinkScroll.Size = new System.Drawing.Size(
+                    splitContainerRightUD.Panel2.AutoScrollMinSize.Width,
+                    this.panelRUForLinkScroll.Size.Height);
+
+                //位置を右下パネルのスクロール位置に連動
+                this.panelRUForLinkScroll.Left = this.splitContainerRightUD.Panel2.AutoScrollPosition.X;
             }
             else
             {
-                swScrollVisible = false;
-            }
+                //幅を右上パネルの幅に更新
+                this.panelRUForLinkScroll.Size = new System.Drawing.Size(
+                    splitContainerRightUD.Panel1.Width,
+                    this.panelRUForLinkScroll.Size.Height);
 
-            if ((swScrollVisible == true) && (swScrollVisibleOld == false))
-            {
-                Console.WriteLine("水平スクロールバーが表示されました");
-                splitContainerRightUD.SplitterDistance = 50;
+                //左端の座標を0に合わせる
+                this.panelRUForLinkScroll.Left = 0;
             }
-            else if ((swScrollVisible == false) && (swScrollVisibleOld == true))
-            {
-                Console.WriteLine("水平スクロールバーが非表示になりました");
-                splitContainerRightUD.SplitterDistance = 35;
-            }
+        }
 
-            swScrollVisibleOld = swScrollVisible;
+        //イベント ユーザーが右下パネルをスクロールした時
+        private void splitContainerRightUD_Panel2_Scroll(object sender, ScrollEventArgs e)
+        {
+            //水平スクロールか判定
+            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
+            {
+                //右上パネルのスクロール位置を右下パネルのスクロール位置に連動
+                this.panelRUForLinkScroll.Left = -e.NewValue;
+            }
         }
     }
-
 }
