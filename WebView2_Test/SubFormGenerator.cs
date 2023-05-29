@@ -2,7 +2,7 @@
 
 namespace WebView2_Test
 {
-    internal class SubFormController
+    internal class SubFormGenerator
     {
         //SubForm生成
         public void CreateSubForm(string formname, string url)

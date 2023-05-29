@@ -42,18 +42,20 @@
 
     <p><b>patternA.html</b></p>
 
-    <button onclick="closeWindow()">ウィンドウを閉じる</button>
-    <script>
-        function closeWindow() {
-            window.close();
+    <div>
+        <button id="btn-close" onclick="closeWindow()">ウィンドウを閉じる</button>
+        <script>
+            function closeWindow() {
+                window.close();
 
-            //C#の関数の実行 - ウィンドウを閉じる
-            chrome.webview.hostObjects.jsToCs.WindowClose("patternA.html");
-            
-        }
-    </script>
+                //C#の関数の実行 - ウィンドウを閉じる
+                chrome.webview.hostObjects.jsToCs.WindowClose("patternA.html");
+                
+            }
+        </script>
+    </div>
 
-    <div id="CsToJs" class="div-1">
+        <div id="CsToJs" class="div-1">
         <p><b>◆C#から受け取った文字列＞</b></p>
     </div>
 

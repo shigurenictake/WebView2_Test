@@ -32,9 +32,10 @@ namespace WebView2_Test
             switch (fimeneme)
             {
                 case "subPatternA.html":
-                    (new SubFormController()).CreateSubForm(fimeneme, url);
+                    (new SubFormGenerator()).CreateSubForm(fimeneme, url);
                     break;
-                case "subpatternB.html":
+                case "subPatternB.html":
+                    (new SubFormGenerator()).CreateSubForm(fimeneme, url);
                     break;
                 default:
                     break;
@@ -47,9 +48,10 @@ namespace WebView2_Test
             switch (formname)
             {
                 case "subPatternA.html":
-                    (new SubFormController()).CloseForm(formname);
+                    (new SubFormGenerator()).CloseForm(formname);
                     break;
-                case "subpatternB.html":
+                case "subPatternB.html":
+                    (new SubFormGenerator()).CloseForm(formname);
                     break;
                 default:
                     break;

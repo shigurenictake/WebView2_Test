@@ -1,6 +1,7 @@
 ﻿using Microsoft.Web;
 using Microsoft.Web.WebView2.Core;//WebView2
 using Microsoft.Web.WebView2.WinForms;
+using Microsoft.Web.WebView2.Wpf;
 using System;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -14,6 +15,9 @@ namespace WebView2_Test
         //JavaScriptで呼ぶ関数を保持するオブジェクト
         private JsToCs jsToCs = new JsToCs();
 
+        //C#からJavaScriptにアクセスする用のクラスオブジェクト
+        private CsToJs csToJs = new CsToJs();
+
         //コンストラクタ
         public MainForm()
         {
@@ -21,6 +25,9 @@ namespace WebView2_Test
             jsToCs.mainform = this;
 
             InitializeComponent();
+
+            //本クラスのWebView2を仕込む
+            csToJs.webView = this.webView;
 
             //パネル1のスクロールバーを非表示　→なぜか非表示にならない
             splitContainerRightUD.Panel1.HorizontalScroll.Visible = false;
@@ -80,6 +87,12 @@ namespace WebView2_Test
             this.richTextBox_CsToJsReturn.AppendText(str1 + "\n");
         }
 
+        //イベント 戻るボタン
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.webView.GoBack();
+        }
+
         //イベント - 閉じるボタン
         public void buttonClose_Click(object sender, EventArgs e)
         {
@@ -94,10 +107,10 @@ namespace WebView2_Test
             switch(fimeneme){
                 case "topMenu.html" :
                 case "patternA.html":
-                    //作成予定
+                    TransformA(fimeneme);
                     break;
                 case "patternB.html":
-                    //作成予定
+                    TransformB(fimeneme);
                     break;
                 default:
                     MessageBox.Show("未登録のhtmlです");
@@ -105,55 +118,18 @@ namespace WebView2_Test
             }
         }
 
-        //イベント スプリッターの移動完了時
-        private void splitContainerLR_SplitterMoved(object sender, SplitterEventArgs e)
+        //ウィンドウ構成A
+        private void TransformA(string fimeneme)
         {
-            //連動スクロール用右上パネル(連動パネル)の位置を調整
-            AdjustPanelRUForLinkScroll();
+            this.csToJs.RemoveCloseBtn();
         }
 
-        //イベント 右上パネルのサイズ変更時
-        private void splitContainerRightUD_Panel1_SizeChanged(object sender, EventArgs e)
+        //ウィンドウ構成B
+        private void TransformB(string fimeneme)
         {
-            //連動スクロール用右上パネル(連動パネル)の位置を調整
-            AdjustPanelRUForLinkScroll();
+            //作成予定
         }
 
-        //連動スクロール用右上パネル(連動パネル)の幅と位置を調整
-        private void AdjustPanelRUForLinkScroll()
-        {
-            //右下パネルのスクロールバー出現しているか判定
-            if (splitContainerRightUD.Panel2.HorizontalScroll.Visible == true)
-            {
-                //幅を右下パネルの最小幅に固定
-                this.panelRUForLinkScroll.Size = new System.Drawing.Size(
-                    splitContainerRightUD.Panel2.AutoScrollMinSize.Width,
-                    this.panelRUForLinkScroll.Size.Height);
 
-                //位置を右下パネルのスクロール位置に連動
-                this.panelRUForLinkScroll.Left = this.splitContainerRightUD.Panel2.AutoScrollPosition.X;
-            }
-            else
-            {
-                //幅を右上パネルの幅に更新
-                this.panelRUForLinkScroll.Size = new System.Drawing.Size(
-                    splitContainerRightUD.Panel1.Width,
-                    this.panelRUForLinkScroll.Size.Height);
-
-                //左端の座標を0に合わせる
-                this.panelRUForLinkScroll.Left = 0;
-            }
-        }
-
-        //イベント ユーザーが右下パネルをスクロールした時
-        private void splitContainerRightUD_Panel2_Scroll(object sender, ScrollEventArgs e)
-        {
-            //水平スクロールか判定
-            if (e.ScrollOrientation == ScrollOrientation.HorizontalScroll)
-            {
-                //右上パネルのスクロール位置を右下パネルのスクロール位置に連動
-                this.panelRUForLinkScroll.Left = -e.NewValue;
-            }
-        }
     }
 }

@@ -44,7 +44,6 @@
             this.splitContainerLR = new System.Windows.Forms.SplitContainer();
             this.splitContainerLeftUD = new System.Windows.Forms.SplitContainer();
             this.splitContainerRightUD = new System.Windows.Forms.SplitContainer();
-            this.panelRUForLinkScroll = new System.Windows.Forms.Panel();
             this.panelForUCA = new System.Windows.Forms.Panel();
             this.buttonUCAc = new System.Windows.Forms.Button();
             this.buttonUCAb = new System.Windows.Forms.Button();
@@ -64,7 +63,6 @@
             this.splitContainerRightUD.Panel1.SuspendLayout();
             this.splitContainerRightUD.Panel2.SuspendLayout();
             this.splitContainerRightUD.SuspendLayout();
-            this.panelRUForLinkScroll.SuspendLayout();
             this.panelForUCA.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,7 +76,7 @@
             this.webView.DefaultBackgroundColor = System.Drawing.Color.White;
             this.webView.Location = new System.Drawing.Point(3, 3);
             this.webView.Name = "webView";
-            this.webView.Size = new System.Drawing.Size(900, 624);
+            this.webView.Size = new System.Drawing.Size(932, 674);
             this.webView.TabIndex = 0;
             this.webView.ZoomFactor = 1D;
             // 
@@ -86,9 +84,9 @@
             // 
             this.textBoxUrlBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxUrlBar.Location = new System.Drawing.Point(3, 633);
+            this.textBoxUrlBar.Location = new System.Drawing.Point(3, 683);
             this.textBoxUrlBar.Name = "textBoxUrlBar";
-            this.textBoxUrlBar.Size = new System.Drawing.Size(900, 19);
+            this.textBoxUrlBar.Size = new System.Drawing.Size(932, 19);
             this.textBoxUrlBar.TabIndex = 1;
             this.textBoxUrlBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxUrlBar_KeyDown);
             // 
@@ -99,7 +97,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox_JsToCs.Location = new System.Drawing.Point(6, 18);
             this.richTextBox_JsToCs.Name = "richTextBox_JsToCs";
-            this.richTextBox_JsToCs.Size = new System.Drawing.Size(448, 117);
+            this.richTextBox_JsToCs.Size = new System.Drawing.Size(466, 117);
             this.richTextBox_JsToCs.TabIndex = 5;
             this.richTextBox_JsToCs.Text = "";
             // 
@@ -119,7 +117,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_CsToJs.Location = new System.Drawing.Point(6, 18);
             this.textBox_CsToJs.Name = "textBox_CsToJs";
-            this.textBox_CsToJs.Size = new System.Drawing.Size(448, 19);
+            this.textBox_CsToJs.Size = new System.Drawing.Size(466, 19);
             this.textBox_CsToJs.TabIndex = 8;
             // 
             // label_CsToJsReturn
@@ -138,14 +136,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox_CsToJsReturn.Location = new System.Drawing.Point(6, 84);
             this.richTextBox_CsToJsReturn.Name = "richTextBox_CsToJsReturn";
-            this.richTextBox_CsToJsReturn.Size = new System.Drawing.Size(448, 102);
+            this.richTextBox_CsToJsReturn.Size = new System.Drawing.Size(466, 102);
             this.richTextBox_CsToJsReturn.TabIndex = 10;
             this.richTextBox_CsToJsReturn.Text = "";
             // 
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClose.Location = new System.Drawing.Point(135, 4);
+            this.buttonClose.Location = new System.Drawing.Point(124, 3);
+            this.buttonClose.Margin = new System.Windows.Forms.Padding(0);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(60, 23);
             this.buttonClose.TabIndex = 11;
@@ -160,7 +159,7 @@
             this.groupBox2.Controls.Add(this.richTextBox_JsToCs);
             this.groupBox2.Location = new System.Drawing.Point(3, 201);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(460, 141);
+            this.groupBox2.Size = new System.Drawing.Size(478, 141);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "◆JavaScriptから受け取った値＞";
@@ -172,15 +171,17 @@
             this.panelTopRightButton.Controls.Add(this.buttonHelp);
             this.panelTopRightButton.Controls.Add(this.buttonBack);
             this.panelTopRightButton.Controls.Add(this.buttonClose);
-            this.panelTopRightButton.Location = new System.Drawing.Point(262, 0);
+            this.panelTopRightButton.Location = new System.Drawing.Point(297, 0);
+            this.panelTopRightButton.Margin = new System.Windows.Forms.Padding(0);
             this.panelTopRightButton.Name = "panelTopRightButton";
-            this.panelTopRightButton.Size = new System.Drawing.Size(201, 34);
+            this.panelTopRightButton.Size = new System.Drawing.Size(187, 26);
             this.panelTopRightButton.TabIndex = 13;
             // 
             // buttonHelp
             // 
             this.buttonHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHelp.Location = new System.Drawing.Point(3, 4);
+            this.buttonHelp.Location = new System.Drawing.Point(4, 3);
+            this.buttonHelp.Margin = new System.Windows.Forms.Padding(0);
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.Size = new System.Drawing.Size(60, 23);
             this.buttonHelp.TabIndex = 17;
@@ -190,12 +191,14 @@
             // buttonBack
             // 
             this.buttonBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonBack.Location = new System.Drawing.Point(69, 4);
+            this.buttonBack.Location = new System.Drawing.Point(64, 3);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(0);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(60, 23);
             this.buttonBack.TabIndex = 18;
             this.buttonBack.Text = "戻る";
             this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // groupBox1
             // 
@@ -207,7 +210,7 @@
             this.groupBox1.Controls.Add(this.button_CsToJs);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(460, 192);
+            this.groupBox1.Size = new System.Drawing.Size(478, 192);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "◆C#からJavaScriptへ＞";
@@ -217,6 +220,7 @@
             this.splitContainerLR.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainerLR.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerLR.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerLR.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainerLR.Name = "splitContainerLR";
             // 
             // splitContainerLR.Panel1
@@ -226,10 +230,10 @@
             // splitContainerLR.Panel2
             // 
             this.splitContainerLR.Panel2.Controls.Add(this.splitContainerRightUD);
-            this.splitContainerLR.Size = new System.Drawing.Size(1384, 661);
-            this.splitContainerLR.SplitterDistance = 910;
+            this.splitContainerLR.Panel2MinSize = 420;
+            this.splitContainerLR.Size = new System.Drawing.Size(1434, 711);
+            this.splitContainerLR.SplitterDistance = 942;
             this.splitContainerLR.TabIndex = 13;
-            this.splitContainerLR.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainerLR_SplitterMoved);
             // 
             // splitContainerLeftUD
             // 
@@ -237,17 +241,19 @@
             this.splitContainerLeftUD.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerLeftUD.IsSplitterFixed = true;
             this.splitContainerLeftUD.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerLeftUD.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainerLeftUD.Name = "splitContainerLeftUD";
             this.splitContainerLeftUD.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.splitContainerLeftUD.Panel1Collapsed = true;
-            this.splitContainerLeftUD.Panel1MinSize = 40;
+            this.splitContainerLeftUD.Panel1MinSize = 26;
             // 
             // splitContainerLeftUD.Panel2
             // 
             this.splitContainerLeftUD.Panel2.Controls.Add(this.textBoxUrlBar);
             this.splitContainerLeftUD.Panel2.Controls.Add(this.webView);
-            this.splitContainerLeftUD.Size = new System.Drawing.Size(906, 657);
-            this.splitContainerLeftUD.SplitterDistance = 40;
+            this.splitContainerLeftUD.Size = new System.Drawing.Size(938, 707);
+            this.splitContainerLeftUD.SplitterDistance = 26;
+            this.splitContainerLeftUD.SplitterWidth = 1;
             this.splitContainerLeftUD.TabIndex = 0;
             // 
             // splitContainerRightUD
@@ -256,35 +262,26 @@
             this.splitContainerRightUD.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainerRightUD.IsSplitterFixed = true;
             this.splitContainerRightUD.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerRightUD.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainerRightUD.Name = "splitContainerRightUD";
             this.splitContainerRightUD.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainerRightUD.Panel1
             // 
-            this.splitContainerRightUD.Panel1.Controls.Add(this.panelRUForLinkScroll);
-            this.splitContainerRightUD.Panel1.SizeChanged += new System.EventHandler(this.splitContainerRightUD_Panel1_SizeChanged);
-            this.splitContainerRightUD.Panel1MinSize = 40;
+            this.splitContainerRightUD.Panel1.Controls.Add(this.panelForUCA);
+            this.splitContainerRightUD.Panel1.Controls.Add(this.panelTopRightButton);
+            this.splitContainerRightUD.Panel1MinSize = 26;
             // 
             // splitContainerRightUD.Panel2
             // 
             this.splitContainerRightUD.Panel2.AutoScroll = true;
-            this.splitContainerRightUD.Panel2.AutoScrollMinSize = new System.Drawing.Size(450, 600);
+            this.splitContainerRightUD.Panel2.AutoScrollMinSize = new System.Drawing.Size(0, 600);
             this.splitContainerRightUD.Panel2.Controls.Add(this.groupBox2);
             this.splitContainerRightUD.Panel2.Controls.Add(this.groupBox1);
-            this.splitContainerRightUD.Panel2.Scroll += new System.Windows.Forms.ScrollEventHandler(this.splitContainerRightUD_Panel2_Scroll);
-            this.splitContainerRightUD.Panel2MinSize = 0;
-            this.splitContainerRightUD.Size = new System.Drawing.Size(466, 657);
-            this.splitContainerRightUD.SplitterDistance = 40;
+            this.splitContainerRightUD.Size = new System.Drawing.Size(484, 707);
+            this.splitContainerRightUD.SplitterDistance = 26;
+            this.splitContainerRightUD.SplitterWidth = 1;
             this.splitContainerRightUD.TabIndex = 0;
-            // 
-            // panelRUForLinkScroll
-            // 
-            this.panelRUForLinkScroll.Controls.Add(this.panelForUCA);
-            this.panelRUForLinkScroll.Controls.Add(this.panelTopRightButton);
-            this.panelRUForLinkScroll.Location = new System.Drawing.Point(0, 0);
-            this.panelRUForLinkScroll.Name = "panelRUForLinkScroll";
-            this.panelRUForLinkScroll.Size = new System.Drawing.Size(463, 37);
-            this.panelRUForLinkScroll.TabIndex = 14;
             // 
             // panelForUCA
             // 
@@ -293,13 +290,15 @@
             this.panelForUCA.Controls.Add(this.buttonUCAb);
             this.panelForUCA.Controls.Add(this.buttonUCAa);
             this.panelForUCA.Location = new System.Drawing.Point(0, 0);
+            this.panelForUCA.Margin = new System.Windows.Forms.Padding(0);
             this.panelForUCA.Name = "panelForUCA";
-            this.panelForUCA.Size = new System.Drawing.Size(248, 34);
+            this.panelForUCA.Size = new System.Drawing.Size(229, 26);
             this.panelForUCA.TabIndex = 17;
             // 
             // buttonUCAc
             // 
-            this.buttonUCAc.Location = new System.Drawing.Point(171, 4);
+            this.buttonUCAc.Location = new System.Drawing.Point(153, 3);
+            this.buttonUCAc.Margin = new System.Windows.Forms.Padding(0);
             this.buttonUCAc.Name = "buttonUCAc";
             this.buttonUCAc.Size = new System.Drawing.Size(75, 23);
             this.buttonUCAc.TabIndex = 2;
@@ -308,7 +307,8 @@
             // 
             // buttonUCAb
             // 
-            this.buttonUCAb.Location = new System.Drawing.Point(90, 4);
+            this.buttonUCAb.Location = new System.Drawing.Point(78, 3);
+            this.buttonUCAb.Margin = new System.Windows.Forms.Padding(0);
             this.buttonUCAb.Name = "buttonUCAb";
             this.buttonUCAb.Size = new System.Drawing.Size(75, 23);
             this.buttonUCAb.TabIndex = 1;
@@ -317,7 +317,8 @@
             // 
             // buttonUCAa
             // 
-            this.buttonUCAa.Location = new System.Drawing.Point(9, 4);
+            this.buttonUCAa.Location = new System.Drawing.Point(3, 3);
+            this.buttonUCAa.Margin = new System.Windows.Forms.Padding(0);
             this.buttonUCAa.Name = "buttonUCAa";
             this.buttonUCAa.Size = new System.Drawing.Size(75, 23);
             this.buttonUCAa.TabIndex = 0;
@@ -328,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 661);
+            this.ClientSize = new System.Drawing.Size(1434, 711);
             this.Controls.Add(this.splitContainerLR);
             this.Name = "MainForm";
             this.Text = "MainForm";
@@ -349,7 +350,6 @@
             this.splitContainerRightUD.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerRightUD)).EndInit();
             this.splitContainerRightUD.ResumeLayout(false);
-            this.panelRUForLinkScroll.ResumeLayout(false);
             this.panelForUCA.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -373,7 +373,6 @@
         private System.Windows.Forms.SplitContainer splitContainerLR;
         private System.Windows.Forms.SplitContainer splitContainerLeftUD;
         private System.Windows.Forms.SplitContainer splitContainerRightUD;
-        private System.Windows.Forms.Panel panelRUForLinkScroll;
         private System.Windows.Forms.Panel panelForUCA;
         private System.Windows.Forms.Button buttonUCAa;
         private System.Windows.Forms.Button buttonUCAc;
