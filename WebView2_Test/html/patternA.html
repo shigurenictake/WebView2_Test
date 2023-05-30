@@ -1,65 +1,22 @@
 ﻿<!DOCTYPE html>
-
-<style>
-    .div-1 {
-        background-color: #eea02a;
-    }
-
-    .div-2 {
-        background-color: #3d7bee;
-    }
-</style>
-
 <html lang="ja">
 <head>
+    <title>パターンA</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <script language="javascript" type="text/javascript">
-
-        //C#からJavaScriptを呼び出す
-        function jsFunc1(str1) {
-            //タグを生成
-            const tag = document.createElement("div");
-            tag.innerText = str1;
-
-            //未完了のリストに追加
-            document.getElementById("CsToJs").appendChild(tag);
-
-            return "success"
-        }
-
-        //JavaScriptからC#を呼び出す
-        function ButtonClick_JsToCs() {
-            //テキストボックスから値取得
-            const sendtext = document.getElementById('sendtext');
-
-            //C#の関数の実行
-            chrome.webview.hostObjects.jsToCs.JsToCsMethod(sendtext.value);
-        }
-    </script>
+    <link rel="stylesheet" href="common.css">
+    <script language="javascript" type="text/javascript" src="common.js"></script>
 </head>
-
 <body>
-
     <p><b>patternA.html</b></p>
-
     <div>
         <button id="btn-close" onclick="closeWindow()">ウィンドウを閉じる</button>
-        <script>
-            function closeWindow() {
-                window.close();
-
-                //C#の関数の実行 - ウィンドウを閉じる
-                chrome.webview.hostObjects.jsToCs.WindowClose("patternA.html");
-                
-            }
-        </script>
     </div>
-
-        <div id="CsToJs" class="div-1">
+    <br>
+    <div id="CsToJs" class="div-3">
         <p><b>◆C#から受け取った文字列＞</b></p>
     </div>
-
-    <div id="JsToCs" class="div-2">
+    <br>
+    <div id="JsToCs" class="div-4">
         <p><b>◆JavaScriptからC#へ送信＞</b></p>
         <input type="text" id="sendtext">
         <input type="button" value='▼送信' onclick="ButtonClick_JsToCs();">

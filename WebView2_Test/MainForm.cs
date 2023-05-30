@@ -26,8 +26,10 @@ namespace WebView2_Test
 
             InitializeComponent();
 
-            //本クラスのWebView2を仕込む
+            //本クラスのWebView2を参照できるようにする
             csToJs.webView = this.webView;
+            //本フォームのプロパティを参照できるようにする
+            csToJs.refForm = this;
 
             //パネル1のスクロールバーを非表示　→なぜか非表示にならない
             splitContainerRightUD.Panel1.HorizontalScroll.Visible = false;
@@ -118,16 +120,79 @@ namespace WebView2_Test
             }
         }
 
-        //ウィンドウ構成A
+        //ウィンドウ構成A 全画面html
         private void TransformA(string fimeneme)
         {
+            //コントロールのレイアウトを一時中断
+            this.SuspendLayout();
+
+            //htmlの閉じるボタンを削除
             this.csToJs.RemoveCloseBtn();
+
+            //タイトルを設定
+            this.csToJs.SetTitle();
+
+            //右パネルを非表示
+            this.splitContainerLR.Panel2Collapsed = true;
+
+            //左上パネルを表示
+            this.splitContainerLeftUD.Panel1Collapsed = false;
+
+            //C#の「戻る/ヘルプ/閉じる」パネルを左上パネルに移動
+            this.splitContainerRightUD.Panel1.Controls.Remove(this.panelBHC);
+            this.splitContainerLeftUD.Panel1.Controls.Add(this.panelBHC);
+            this.panelBHC.Location = new System.Drawing.Point(
+                this.splitContainerLeftUD.Panel1.Width - this.panelBHC.Width,
+                this.panelBHC.Location.Y);
+
+            if (fimeneme == "topMenu.html")
+            {
+                //戻るボタンの非表示
+                this.buttonBack.Visible = false;
+            }
+            else 
+            {
+                //戻るボタンの表示
+                this.buttonBack.Visible = true;
+            }
+
+            //コントロールのレイアウトを再開
+            this.ResumeLayout(false);
         }
 
-        //ウィンドウ構成B
+        //ウィンドウ構成B 半画面html
         private void TransformB(string fimeneme)
         {
-            //作成予定
+            //コントロールのレイアウトを一時中断
+            this.SuspendLayout();
+
+            //htmlの閉じるボタンを削除
+            this.csToJs.RemoveCloseBtn();
+
+            //タイトルを設定
+            this.csToJs.SetTitle();
+
+            //右パネルを表示
+            this.splitContainerLR.Panel2Collapsed = false;
+
+            //左上パネルを非表示
+            this.splitContainerLeftUD.Panel1Collapsed = true;
+
+            //C#の「戻る/ヘルプ/閉じる」パネルを右上パネルに移動
+            this.splitContainerLeftUD.Panel1.Controls.Remove(this.panelBHC);
+            this.splitContainerRightUD.Panel1.Controls.Add(this.panelBHC);
+            this.panelBHC.Location = new System.Drawing.Point(
+                this.splitContainerRightUD.Panel1.Width - this.panelBHC.Width,
+                this.panelBHC.Location.Y);
+
+            //戻るボタンの表示
+            this.buttonBack.Visible = true;
+
+            //スプリッターの位置を設定
+            this.splitContainerLR.SplitterDistance = (int)(this.splitContainerLR.Width * 65 / 100);
+
+            //コントロールのレイアウトを再開
+            this.ResumeLayout(false);
         }
 
 

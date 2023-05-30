@@ -14,7 +14,7 @@ namespace WebView2_Test
             if (subform == null || subform.IsDisposed)
             {
                 //ヌル、または破棄されていたら、新しいウィンドウで起動する
-                subform = new SubForm(url);
+                subform = new SubFormB(url);
                 subform.Show();
                 //フォーム名を設定
                 subform.Name = formname;

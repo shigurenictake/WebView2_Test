@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace WebView2_Test
 {
-    public partial class SubForm : Form
+    public partial class SubFormB : Form
     {
         //JavaScriptで呼ぶ関数を保持するオブジェクト
         private JsToCs jsToCs = new JsToCs();
 
         //コンストラクタ
-        public SubForm(string url)
+        public SubFormB(string url)
         {
             //JsToCsクラスでForm1のフォーム取得参照用
-            jsToCs.subform = this;
+            jsToCs.subformb = this;
 
             InitializeComponent();
 

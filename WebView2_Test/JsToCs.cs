@@ -9,7 +9,13 @@ namespace WebView2_Test
     {
         //Formのメンバ取得用(初期化はForm側で行う)
         public MainForm mainform = null;
-        public SubForm subform = null;
+        public SubFormB subformb = null;
+
+        //C#_WebViewチェック
+        public string CheckCsharpWebView()
+        {
+            return "CsharpWebView_OK";
+        }
 
         //Jsからの呼び出し
         public void JsToCsMethod(string strText)
@@ -18,9 +24,9 @@ namespace WebView2_Test
             {
                 mainform.richTextBox_JsToCs.AppendText(strText + "\n");
             }
-            if (subform != null)
+            if (subformb != null)
             {
-                subform.richTextBox_JsToCs.AppendText(strText + "\n");
+                subformb.richTextBox_JsToCs.AppendText(strText + "\n");
             }
         }
 
