@@ -1,29 +1,8 @@
 /* 共通処理 */
 
-//C#_WebView判定フラグ
-var isCsharpWebView = Boolean(0); //false 初期化
-
-//load イベント
-window.onload = function(){
-    //C#_WebView判定フラグを設定
-    setIsisCsharpWebView();
-}
-
-//C#_WebView判定フラグを設定
-async function setIsCsharpWebView(){
-    var strIsCsharpWebView="";//初期化
-    try{
-        strIsCsharpWebView = chrome.webview.hostObjects.jsToCs.CheckCsharpWebView();
-    }catch(error){
-        strIsCsharpWebView="";
-    }finally{
-        if(strIsCsharpWebView=="CsharpWebView_OK"){
-            isCsharpWebView = Boolean(1); //true
-        }else{
-            isCsharpWebView = Boolean(0); //false
-        }
-    }
-}
+//C#_WebView判定フラグ(false:未使用 , true:使用)
+//htmlロード後にC#からtrueがセットされる
+var isCsharpWebView = Boolean(0); //初期値=false
 
 //C#からJavaScriptを呼び出す
 function jsFunc1(str1) {
@@ -48,36 +27,24 @@ function closeWindow() {
     window.close();
 }
 
-//htmlからサブウィンドウを開く
-function openNewWindowHtml(id) {
-    let path="";
-    switch(id){
-        case "btn-html-new-win-a" :
-            path = "./subPatternA.html";
-            break;
-        case "btn-html-new-win-b" :
-            path = "./subpatternB.html";
-            break;
-        default : 
+function openNewWindow(relativePath){
+    if(isCsharpWebView==false){
+        openNewWindowByHtml(relativePath);
+    }else{
+        openNewWindowByCs(relativePath);
     }
-    window.open(path, "_blank", "width=800,height=300");
+}
+
+//htmlからサブウィンドウを開く
+function openNewWindowByHtml(relativePath) {
+    window.open(relativePath, "_blank", "width=800,height=300");
 }
 
 //C#からサブウィンドウを開く
-function openNewWindowByCs(id) {
+function openNewWindowByCs(relativePath) {
     // 現在のURLの情報を取得する
     const currentUrl = new URL(window.location.href);
     // 相対パスをフルパスに変換する
-    let relativePath="";
-    switch(id){
-        case "btn-cs-new-win-a" :
-            relativePath = "./subPatternA.html";
-            break;
-        case "btn-cs-new-win-b" :
-            relativePath = "./subPatternB.html";
-            break;
-        default : 
-    }
     const fullPath = new URL(relativePath, currentUrl).href;
     console.log(fullPath);
     //C#の関数の実行。htmlを新しいフォームで開く
@@ -85,16 +52,6 @@ function openNewWindowByCs(id) {
 }
 
 //htmlでURL切り替え
-function windowOpenSelf(id) {
-    let path="";
-    switch(id){
-        case "btn-self-win-a" :
-            path = "./patternA.html";
-            break;
-        case "btn-self-win-b" :
-            path = "./patternB.html";
-            break;
-        default : 
-    }
-    window.open(path, "_self");
+function windowOpenSelf(relativePath) {
+    window.open(relativePath, "_self");
 }

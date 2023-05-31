@@ -16,6 +16,13 @@ namespace WebView2_Test
         //参照フォーム(初期化は参照元クラスで行う)
         public Form refForm;
 
+        //C#_WebView判定フラグにtrueをセット
+        public async void setIsCsharpWebView()
+        {
+            await webView.ExecuteScriptAsync("isCsharpWebView =  Boolean(1);");//true
+        }
+
+
         //JavaScript実行要求
         public async void RemoveCloseBtn()
         {
@@ -35,5 +42,33 @@ namespace WebView2_Test
             //タイトルを設定
             refForm.Text = strTitle.Trim('"');
         }
+
+        //PatternA固有操作
+        public async void OperatePatternA()
+        {
+            System.Text.StringBuilder js = new System.Text.StringBuilder();
+            js.AppendLine("var hw1Element = document.getElementById('hw1');");
+            js.AppendLine("hw1Element.style.width = '80%'; ");// widthの値を変更
+            await webView.ExecuteScriptAsync(js.ToString());
+        }
+
+        //PatternB固有操作
+        public async void OperatePatternB()
+        {
+            System.Text.StringBuilder js = new System.Text.StringBuilder();
+            //詳細へボタンの非表示
+            js.AppendLine("document.getElementById('btn-godetail').style.display='none';");
+            await webView.ExecuteScriptAsync(js.ToString());
+        }
+
+        //詳細へボタンをクリックする
+        public async void buttonClickGoDetail()
+        {
+            System.Text.StringBuilder js = new System.Text.StringBuilder();
+            js.AppendLine("var element = document.getElementById('btn-godetail').click();");
+            //js.AppendLine("element.click();");
+            await webView.ExecuteScriptAsync(js.ToString());
+        }
+
     }
 }

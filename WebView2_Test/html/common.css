@@ -14,3 +14,17 @@
 .div-4 {
     background-color: #3d7bee;
 }
+
+.div-hw1 {
+    height: 4rem;
+    width: 20rem;
+    border:2px solid #494949;
+    display:inline-block;
+}
+
+.div-hw2 {
+    height: 4rem;
+    width: 4rem;
+    border:2px solid #494949;
+    display:inline-block;
+}

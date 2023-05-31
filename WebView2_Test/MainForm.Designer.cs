@@ -46,7 +46,7 @@
             this.splitContainerRightUD = new System.Windows.Forms.SplitContainer();
             this.panelForUCCon = new System.Windows.Forms.Panel();
             this.buttonUCAc = new System.Windows.Forms.Button();
-            this.buttonUCAb = new System.Windows.Forms.Button();
+            this.buttonGoDetail = new System.Windows.Forms.Button();
             this.buttonUCAa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.webView)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -287,7 +287,7 @@
             // 
             this.panelForUCCon.BackColor = System.Drawing.SystemColors.Control;
             this.panelForUCCon.Controls.Add(this.buttonUCAc);
-            this.panelForUCCon.Controls.Add(this.buttonUCAb);
+            this.panelForUCCon.Controls.Add(this.buttonGoDetail);
             this.panelForUCCon.Controls.Add(this.buttonUCAa);
             this.panelForUCCon.Location = new System.Drawing.Point(0, 0);
             this.panelForUCCon.Margin = new System.Windows.Forms.Padding(0);
@@ -305,15 +305,16 @@
             this.buttonUCAc.Text = "UCAc";
             this.buttonUCAc.UseVisualStyleBackColor = true;
             // 
-            // buttonUCAb
+            // buttonGoDetail
             // 
-            this.buttonUCAb.Location = new System.Drawing.Point(78, 3);
-            this.buttonUCAb.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonUCAb.Name = "buttonUCAb";
-            this.buttonUCAb.Size = new System.Drawing.Size(75, 23);
-            this.buttonUCAb.TabIndex = 1;
-            this.buttonUCAb.Text = "UCAb";
-            this.buttonUCAb.UseVisualStyleBackColor = true;
+            this.buttonGoDetail.Location = new System.Drawing.Point(78, 3);
+            this.buttonGoDetail.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonGoDetail.Name = "buttonGoDetail";
+            this.buttonGoDetail.Size = new System.Drawing.Size(75, 23);
+            this.buttonGoDetail.TabIndex = 1;
+            this.buttonGoDetail.Text = "詳細へ";
+            this.buttonGoDetail.UseVisualStyleBackColor = true;
+            this.buttonGoDetail.Click += new System.EventHandler(this.buttonGoDetail_Click);
             // 
             // buttonUCAa
             // 
@@ -376,7 +377,7 @@
         private System.Windows.Forms.Panel panelForUCCon;
         private System.Windows.Forms.Button buttonUCAa;
         private System.Windows.Forms.Button buttonUCAc;
-        private System.Windows.Forms.Button buttonUCAb;
+        private System.Windows.Forms.Button buttonGoDetail;
     }
 }
 

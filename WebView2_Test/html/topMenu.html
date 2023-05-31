@@ -14,21 +14,17 @@
     </div>
     <br>
     <div>
-        <button id="btn-html-new-win-a" onclick="openNewWindowHtml(id)">htmlからサブウィンドウ(A)</button>
-        <button id="btn-html-new-win-b" onclick="openNewWindowHtml(id)">htmlからサブウィンドウ(B)</button>
-        <div>window.openする
-            (WebView2の時は自動で新しいウィンドウでページを開く。ウィンドウは独立する。)</div>
+        <button id="btn-new-win-a" onclick="openNewWindow('./subPatternA.html')">サブウィンドウ(A)</button>
+        <button id="btn-new-win-b" onclick="openNewWindow('./subPatternB.html')">サブウィンドウ(B)</button>
+        <div>
+            htmlのみの時とC#/WebView2使用時で開き方を分岐。<br>
+            C#/WebView2では新しいフォーム(ウィンドウ)でページを開く。
+        </div>
     </div>
     <br>
     <div>
-        <button id="btn-cs-new-win-a" onclick="openNewWindowByCs(id)">C#からサブウィンドウ(A)</button>
-        <button id="btn-cs-new-win-b" onclick="openNewWindowByCs(id)">C#からサブウィンドウ(B)</button>
-        <div>新しいフォーム(ウィンドウ)でページを開く。(メインフォームの子となり、メインフォームが閉じると閉じる)</div>
-    </div>
-    <br>
-    <div>
-        <button id="btn-self-win-a" onclick="windowOpenSelf(id)">htmlでURL切り替え(A)</button>
-        <button id="btn-self-win-b" onclick="windowOpenSelf(id)">htmlでURL切り替え(B)</button>
+        <button id="btn-self-win-a" onclick="windowOpenSelf('./patternA.html')">htmlでURL切り替え(A)</button>
+        <button id="btn-self-win-b" onclick="windowOpenSelf('./patternB.html')">htmlでURL切り替え(B)</button>
         <div>htmlからwindow.openする</div>
     </div>
     <br>

@@ -53,6 +53,8 @@ namespace WebView2_Test
                     //JavaScriptからC#のメソッドが実行できる様に仕込む
                     webView.CoreWebView2.AddHostObjectToScript("jsToCs", jsToCs);
 
+                    csToJs.setIsCsharpWebView();
+
                     //URLバーを更新する
                     string url = this.webView.Source.ToString();
                     this.textBoxUrlBar.Text = url;
@@ -112,6 +114,7 @@ namespace WebView2_Test
                     TransformA(fimeneme);
                     break;
                 case "patternB.html":
+                case "patternB1.html":
                     TransformB(fimeneme);
                     break;
                 default:
@@ -145,6 +148,7 @@ namespace WebView2_Test
                 this.splitContainerLeftUD.Panel1.Width - this.panelBHC.Width,
                 this.panelBHC.Location.Y);
 
+            //戻るボタンの非表示・表示
             if (fimeneme == "topMenu.html")
             {
                 //戻るボタンの非表示
@@ -154,6 +158,18 @@ namespace WebView2_Test
             {
                 //戻るボタンの表示
                 this.buttonBack.Visible = true;
+            }
+
+            //固有処理
+            switch (fimeneme)
+            {
+                case "topMenu.html":
+                    break;
+                case "patternA.html":
+                    this.csToJs.OperatePatternA();
+                    break;
+                default:
+                    break;
             }
 
             //コントロールのレイアウトを再開
@@ -191,10 +207,24 @@ namespace WebView2_Test
             //スプリッターの位置を設定
             this.splitContainerLR.SplitterDistance = (int)(this.splitContainerLR.Width * 65 / 100);
 
+            //固有処理
+            switch (fimeneme)
+            {
+                case "patternB.html":
+                    csToJs.OperatePatternB();
+                    break;
+                default:
+                    break;
+            }
+
             //コントロールのレイアウトを再開
             this.ResumeLayout(false);
         }
 
-
+        //イベント 詳細へボタン
+        private void buttonGoDetail_Click(object sender, EventArgs e)
+        {
+            csToJs.buttonClickGoDetail();
+        }
     }
 }
